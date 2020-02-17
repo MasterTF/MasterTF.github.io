@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="分布式,Raft,">
+  <meta name="keywords" content="分布式,一致性,Raft,">
 
 
 
@@ -94,16 +94,16 @@
 
 
 <meta name="description" content="概述RAFT协议作用是保证分布式系统同一数据的一致性（与2pc不同，2pc是保证多个数据的原子性）。 采取的方式是分布式系统中只有一个节点接收数据，然后向其他节点复制 在一个由 Raft 协议组织的集群中有三类角色：  Leader（领袖） Follower（群众） Candidate（候选人）  Raft将问题分解和具体化：Leader统一处理变更操作请求，一致性协议的作用具化为保证节点间操作日">
-<meta name="keywords" content="分布式,Raft">
+<meta name="keywords" content="分布式,一致性,Raft">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Raft概述">
 <meta property="og:url" content="http://yoursite.com/2018/04/16/Raft概述/index.html">
-<meta property="og:site_name" content="Master TF&#39;s BLOG">
+<meta property="og:site_name" content="于大帅的博客">
 <meta property="og:description" content="概述RAFT协议作用是保证分布式系统同一数据的一致性（与2pc不同，2pc是保证多个数据的原子性）。 采取的方式是分布式系统中只有一个节点接收数据，然后向其他节点复制 在一个由 Raft 协议组织的集群中有三类角色：  Leader（领袖） Follower（群众） Candidate（候选人）  Raft将问题分解和具体化：Leader统一处理变更操作请求，一致性协议的作用具化为保证节点间操作日">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/img/15254237788398.jpg">
 <meta property="og:image" content="http://yoursite.com/img/15254217092487.jpg">
-<meta property="og:updated_time" content="2019-12-26T16:08:08.552Z">
+<meta property="og:updated_time" content="2020-02-17T12:50:35.146Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Raft概述">
 <meta name="twitter:description" content="概述RAFT协议作用是保证分布式系统同一数据的一致性（与2pc不同，2pc是保证多个数据的原子性）。 采取的方式是分布式系统中只有一个节点接收数据，然后向其他节点复制 在一个由 Raft 协议组织的集群中有三类角色：  Leader（领袖） Follower（群众） Candidate（候选人）  Raft将问题分解和具体化：Leader统一处理变更操作请求，一致性协议的作用具化为保证节点间操作日">
@@ -141,7 +141,7 @@
 
 
 
-  <title>Raft概述 | Master TF's BLOG</title>
+  <title>Raft概述 | 于大帅的博客</title>
   
 
 
@@ -177,7 +177,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Master TF's BLOG</span>
+        <span class="site-title">于大帅的博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -315,13 +315,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/16/Raft概述/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Master TF">
+      <meta itemprop="name" content="于大帅">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Master TF's BLOG">
+      <meta itemprop="name" content="于大帅的博客">
     </span>
 
     
@@ -366,39 +366,6 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/技术/" itemprop="url" rel="index">
                     <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/分布式/" itemprop="url" rel="index">
-                    <span itemprop="name">分布式</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/分布式/一致性/" itemprop="url" rel="index">
-                    <span itemprop="name">一致性</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/分布式/一致性/Raft/" itemprop="url" rel="index">
-                    <span itemprop="name">Raft</span>
                   </a>
                 </span>
 
@@ -596,8 +563,8 @@
       
         
 <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/images/wechat_official_account.jpg" alt="Master TF wechat" style="width: 200px; max-width: 100%;">
-    <div>subscribe to my blog by scanning my public wechat account</div>
+    <img id="wechat_subscriber_qcode" src="/images/wechat_pay.jpeg" alt="于大帅 wechat" style="width: 200px; max-width: 100%;">
+    <div>可以白嫖我的颜值，不能白嫖我的才华，打赏😆😆！！!</div>
 </div>
 
 
@@ -608,14 +575,14 @@
       
         
   <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <div>打赏完了加微信白嫖颜值😁😁！！！</div>
     <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
       <span>赏</span>
     </button>
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechat_account.jpeg" alt="Master TF WeChat Pay">
+          <img id="wechat_qr" src="/images/wechat_ercode.jpeg" alt="于大帅 WeChat Pay">
           <p>微信打赏</p>
         </div>
       
@@ -639,6 +606,8 @@
         <div class="post-tags">
           
             <a href="/tags/分布式/" rel="tag"># 分布式</a>
+          
+            <a href="/tags/一致性/" rel="tag"># 一致性</a>
           
             <a href="/tags/Raft/" rel="tag"># Raft</a>
           
@@ -755,8 +724,8 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Master TF">
-          <p class="site-author-name" itemprop="name">Master TF</p>
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="于大帅">
+          <p class="site-author-name" itemprop="name">于大帅</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
           
@@ -766,7 +735,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">40</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -777,7 +746,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -788,7 +757,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -875,11 +844,11 @@
         <div class="copyright">
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Master TF</span>
+  <span class="author" itemprop="copyrightHolder">于大帅</span>
 </div>
 
 

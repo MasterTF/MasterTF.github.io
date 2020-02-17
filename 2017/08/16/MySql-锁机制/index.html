@@ -98,10 +98,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySql 锁机制">
 <meta property="og:url" content="http://yoursite.com/2017/08/16/MySql-锁机制/index.html">
-<meta property="og:site_name" content="Master TF&#39;s BLOG">
+<meta property="og:site_name" content="于大帅的博客">
 <meta property="og:description" content="锁是什么锁是计算机协调多个进程或纯线程并发访问某一资源的机制。在数据库中，除传统的计算资源（CPU、RAM、I/O）的争用以外，数据也是一种供许多用户共享的资源。如何保证数据并发访问的一致性、有效性是所在有数据库必须解决的一个问题，锁冲突也是影响数据库并发访问性能的一个重要因素。从这个角度来说，锁对数据库而言显得尤其重要，也更加复杂。 防止更新丢失，并不能单靠数据库事务控制器来解决，需要应用程序对">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-26T16:08:08.551Z">
+<meta property="og:updated_time" content="2020-02-17T12:50:35.146Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySql 锁机制">
 <meta name="twitter:description" content="锁是什么锁是计算机协调多个进程或纯线程并发访问某一资源的机制。在数据库中，除传统的计算资源（CPU、RAM、I/O）的争用以外，数据也是一种供许多用户共享的资源。如何保证数据并发访问的一致性、有效性是所在有数据库必须解决的一个问题，锁冲突也是影响数据库并发访问性能的一个重要因素。从这个角度来说，锁对数据库而言显得尤其重要，也更加复杂。 防止更新丢失，并不能单靠数据库事务控制器来解决，需要应用程序对">
@@ -138,7 +138,7 @@
 
 
 
-  <title>MySql 锁机制 | Master TF's BLOG</title>
+  <title>MySql 锁机制 | 于大帅的博客</title>
   
 
 
@@ -174,7 +174,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Master TF's BLOG</span>
+        <span class="site-title">于大帅的博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -312,13 +312,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/16/MySql-锁机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Master TF">
+      <meta itemprop="name" content="于大帅">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Master TF's BLOG">
+      <meta itemprop="name" content="于大帅的博客">
     </span>
 
     
@@ -363,28 +363,6 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/技术/" itemprop="url" rel="index">
                     <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/数据库/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/数据库/MySql/" itemprop="url" rel="index">
-                    <span itemprop="name">MySql</span>
                   </a>
                 </span>
 
@@ -597,8 +575,8 @@
       
         
 <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/images/wechat_official_account.jpg" alt="Master TF wechat" style="width: 200px; max-width: 100%;">
-    <div>subscribe to my blog by scanning my public wechat account</div>
+    <img id="wechat_subscriber_qcode" src="/images/wechat_pay.jpeg" alt="于大帅 wechat" style="width: 200px; max-width: 100%;">
+    <div>可以白嫖我的颜值，不能白嫖我的才华，打赏😆😆！！!</div>
 </div>
 
 
@@ -609,14 +587,14 @@
       
         
   <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <div>打赏完了加微信白嫖颜值😁😁！！！</div>
     <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
       <span>赏</span>
     </button>
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechat_account.jpeg" alt="Master TF WeChat Pay">
+          <img id="wechat_qr" src="/images/wechat_ercode.jpeg" alt="于大帅 WeChat Pay">
           <p>微信打赏</p>
         </div>
       
@@ -756,8 +734,8 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Master TF">
-          <p class="site-author-name" itemprop="name">Master TF</p>
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="于大帅">
+          <p class="site-author-name" itemprop="name">于大帅</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
           
@@ -767,7 +745,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">40</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -778,7 +756,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -789,7 +767,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -876,11 +854,11 @@
         <div class="copyright">
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Master TF</span>
+  <span class="author" itemprop="copyrightHolder">于大帅</span>
 </div>
 
 
