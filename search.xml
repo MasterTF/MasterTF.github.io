@@ -249,11 +249,10 @@
 <h3 id="防止异变"><a href="#防止异变" class="headerlink" title="防止异变"></a>防止异变</h3><p>问题：如何设计对象、子系统和系统，使其内部的变化或不稳定性不会对其他元素产生不良影响？<br>方案：识别预计变化或不稳定之处，分配职责用以在这些变化之外创建稳定接口。“接口”指的是广泛意义上的访问视图，而不仅仅是诸如Java接口等字面含义。</p>
 ]]></content>
       <categories>
-        <category>通用能力</category>
-        <category>架构</category>
+        <category>系统设计</category>
       </categories>
       <tags>
-        <tag>架构</tag>
+        <tag>面向对象</tag>
       </tags>
   </entry>
   <entry>
@@ -453,8 +452,7 @@
 <h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p><img src="http://km.oa.com/files/photos/pictures/202101/1610185410_25_w1456_h934.png" alt="enter image description here"></p>
 ]]></content>
       <categories>
-        <category>通用能力</category>
-        <category>架构</category>
+        <category>系统设计</category>
       </categories>
       <tags>
         <tag>架构</tag>
@@ -876,11 +874,10 @@
 <p><img src="/img/15821955145522.jpg" alt="-w312"></p>
 ]]></content>
       <categories>
-        <category>通用能力</category>
-        <category>架构</category>
+        <category>系统设计</category>
       </categories>
       <tags>
-        <tag>架构</tag>
+        <tag>建模</tag>
       </tags>
   </entry>
   <entry>
@@ -1310,8 +1307,7 @@
 <p>最后，一个观点结尾：<br><strong>“能用产品解决的问题不要用服务，能用服务解决的问题不要用咨询”</strong></p>
 ]]></content>
       <categories>
-        <category>通用能力</category>
-        <category>架构</category>
+        <category>系统设计</category>
       </categories>
       <tags>
         <tag>架构</tag>
