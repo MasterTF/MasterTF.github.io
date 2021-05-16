@@ -355,6 +355,67 @@
       </tags>
   </entry>
   <entry>
+    <title>Quorum机制</title>
+    <url>/2021/01/16/Quorum%E6%9C%BA%E5%88%B6/</url>
+    <content><![CDATA[<h2 id="WARO机制介绍"><a href="#WARO机制介绍" class="headerlink" title="WARO机制介绍"></a>WARO机制介绍</h2><p>先看一个极端的情况：WARO(Write All Read one)是一种简单的副本控制协议，当Client请求向某副本写数据时(更新数据)，只有当所有的副本都更新成功之后，这次写操作才算成功，否则视为失败。</p>
+<a id="more"></a>
+<p>从这里可以看出两点：</p>
+<ol>
+<li>写操作很脆弱，因为只要有一个副本更新失败，此次写操作就视为失败了。</li>
+<li>读操作很简单，因为，所有的副本更新成功，才视为更新成功，从而保证所有的副本一致。这样，只需要读任何一个副本上的数据即可。<br>假设有N个副本，N-1个都宕机了，剩下的那个副本仍能提供读服务；但是只要有一个副本宕机了，写服务就不会成功。</li>
+</ol>
+<p>从上述分析可以发现 WARO 读服务的可用性较高，但更新服务的可用性不高，甚至虽然使用副本，但更新服务的可用性等效于没有副本。</p>
+<h2 id="Quorum机制介绍"><a href="#Quorum机制介绍" class="headerlink" title="Quorum机制介绍"></a>Quorum机制介绍</h2><ul>
+<li>Quorum是分布式系统中用来保证数据冗余和最终一致性的投票算法，其主要数学思想来源于鸽巢原理。</li>
+<li>下面将 WARO 的条件进行松弛，从而使得可以在读写服务可用性之间做折中，得出 Quorum 机制。</li>
+<li>假设有N个副本，更新操作wi 在W个副本中更新成功之后，才认为此次更新操作wi 成功。称成功提交的更新操作对应的数据为：“成功提交的数据”。对于读操作而言，至少需要读R个副本才能读到此次更新的数据。其中，W+R&gt;N ，即W和R有重叠。一般，W+R=N+1<br><img src="/img/16211552541601.jpg" alt></li>
+</ul>
+<p>举例：</p>
+<ol>
+<li>假设系统中有5个副本，W=3，R=3。初始时数据为(V1，V1，V1，V1，V1）–成功提交的版本号为1</li>
+<li>当某次更新操作在3个副本上成功后，就认为此次更新操作成功。数据变成：(V2，V2，V2，V1，V1）–成功提交后，版本号变成2</li>
+<li>因此，最多只需要读3个副本，一定能够读到V2(此次更新成功的数据)。而在后台，可对剩余的V1 同步到V2，而不需要让Client知道。</li>
+</ol>
+<p>Quorum 机制的三个系统参数 N、W、R 控制了系统的可用性，也是系统对用户的服务承诺:数 据最多有 N 个副本，但数据更新成功 W 个副本即返回用户成功。对于一致性要求较高的 Quorum 系 统，系统还应该承诺任何时候不读取未成功提交的数据，即读取到的数据都是曾经在 W 个副本上成 功的数据。</p>
+<h2 id="Quorum机制分析"><a href="#Quorum机制分析" class="headerlink" title="Quorum机制分析"></a>Quorum机制分析</h2><h3 id="仅依赖Quorum机制无法保证强一致性"><a href="#仅依赖Quorum机制无法保证强一致性" class="headerlink" title="仅依赖Quorum机制无法保证强一致性"></a>仅依赖Quorum机制无法保证强一致性</h3><ul>
+<li>所谓强一致性就是：任何时刻任何用户或节点都可以读到最近一次成功提交的副本数据。强一致性是程度最高的一致性要求，也是实践中最难以实现的一致性。</li>
+<li>因为，仅仅通过Quorum机制无法确定最新已经成功提交的版本号(除非将最新已提交的版本号作为元数据由特定的元数据服务器或元数 据集群管理)。</li>
+<li>比如，上面的V2 成功提交后（已经写入W=3份），尽管读取3个副本时一定能读到V2，如果刚好读到的是(V2，V2，V2），则此次读取的数据是最新成功提交的数据，因为W=3，而此时刚好读到了3份V2。</li>
+<li>如果读到的是（V2，V1，V1），则无法确定是一个成功提交的版本，还需要继续再读，直到读到V2的达到3份为止，这时才能确定V2 就是已经成功提交的最新的数据。<br><img src="/img/16211553483856.jpg" alt></li>
+</ul>
+<h3 id="如何通过quorum达到强一致性"><a href="#如何通过quorum达到强一致性" class="headerlink" title="如何通过quorum达到强一致性"></a>如何通过quorum达到强一致性</h3><ol>
+<li>限制提交的更新操作必须严格递增，即只有在前一个更新操作成功提交后才可以提交后一 个更新操作，保证成功提交的数据版本号必须是连续增加的</li>
+<li>如何读取最新的数据？—最多读R个副本就可以读到最新的数据了。</li>
+<li>如何确定最高版本号的数据是一个成功提交的数据？—继续读其他的副本，直到读到的 最高版本号副本 出现了W次。</li>
+<li>若不满足，则R中版本号第二大的为最新成功提交的副本</li>
+</ol>
+<p>实际工程中，应该尽量通过其他技术手段，回避通过 Quorum 机制读取最新的成功提交的版本。例如，当 quorum 机制与 primary-secondary 控制协议结合使用时，可以通过读取 primary 的方式读取到 最新的已提交的数据。</p>
+<h3 id="基于-Quorum-机制选择-primary"><a href="#基于-Quorum-机制选择-primary" class="headerlink" title="基于 Quorum 机制选择 primary"></a>基于 Quorum 机制选择 primary</h3><p>选择新的 primary 的工作是由某一额外的中心节点完成。</p>
+<p>中心节点读取 R 个副本，选择 R 个副本中版本号最高的副本作为新的 primary。新 primary 与至少 W 个副本完成数据同步后作为新 的 primary 提供读写服务。</p>
+<ul>
+<li>R 个副本中一定蕴含了最新的成功提交的数据（即要么是V2,要么是V1）</li>
+<li>虽然不能确定最高版本号的数是一个成功提交的数据，但新的 primary 在随后与 secondary 同步数据，使得该版本的副本个数达到 W，从而使得该版本的数据成为成功提交的数据</li>
+</ul>
+<p>举例：</p>
+<ul>
+<li>在 N=5，W=3，R=3 的系统中，某时刻副本最大版本号为(v2 v2 v1 v1 v1)，此时 v1 是系统的最新的成功提交的数据，v2 是一个处于中间状态的未成功提交的数据。</li>
+<li>假设此刻原 primary 副本异常，中心节点进行 primary 切换工作。这类“中间态”数据究竟作为“脏数据”被删除，还是作为新的数据被同步后成为生效的数据，完全取决于这个数据能否参与新 primary 的选举，分两种情况：<br><img src="/img/16211554996958.jpg" alt></li>
+</ul>
+<ol>
+<li>若中心节点读取到的版本号为(v1 v1 v1)，则任 选一个副本作为 primary，新 primary 以 v1 作为最新的成功提交的版本并与其他副本同步，当与第 1、 第 2 个副本同步数据时，由于第 1、第 2 个副本版本号大于 primary，属于脏数据。<br><img src="/img/16211555196393.jpg" alt></li>
+<li>若中心节点读取到的版本号为(v2 v1 v1)，则选取版本号为 v2 的副本作为新的 primary。之后，一旦新 primary 与其他 2 个副本完成数据同步，则符合 v2 的副本个数达到 W 个，成为最新的成功提交的副本，新 primary 可以提供正常的读写服务。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>分布式系统</category>
+      </categories>
+      <tags>
+        <tag>分布式系统</tag>
+        <tag>quorum</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Lease机制</title>
     <url>/2021/01/15/Lease%E6%9C%BA%E5%88%B6/</url>
     <content><![CDATA[<h2 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h2><p>Lease 是由颁发者授予的在某一有效期内的承诺。<br>包含两方面的内容：</p>
@@ -829,64 +890,149 @@
       </tags>
   </entry>
   <entry>
-    <title>Quorum机制</title>
-    <url>/2020/12/16/Quorum%E6%9C%BA%E5%88%B6/</url>
-    <content><![CDATA[<h2 id="WARO机制介绍"><a href="#WARO机制介绍" class="headerlink" title="WARO机制介绍"></a>WARO机制介绍</h2><p>先看一个极端的情况：WARO(Write All Read one)是一种简单的副本控制协议，当Client请求向某副本写数据时(更新数据)，只有当所有的副本都更新成功之后，这次写操作才算成功，否则视为失败。</p>
+    <title>缓存</title>
+    <url>/2020/10/16/%E7%BC%93%E5%AD%98/</url>
+    <content><![CDATA[<p>设计缓存方案时需关注的问题及解决方案</p>
 <a id="more"></a>
-<p>从这里可以看出两点：</p>
+<h2 id="缓存更新策略"><a href="#缓存更新策略" class="headerlink" title="缓存更新策略"></a>缓存更新策略</h2><h3 id="Cache-Aside"><a href="#Cache-Aside" class="headerlink" title="Cache Aside"></a>Cache Aside</h3><p><strong>Query</strong><br><img src="/img/16211559640368.jpg" alt></p>
 <ol>
-<li>写操作很脆弱，因为只要有一个副本更新失败，此次写操作就视为失败了。</li>
-<li>读操作很简单，因为，所有的副本更新成功，才视为更新成功，从而保证所有的副本一致。这样，只需要读任何一个副本上的数据即可。<br>假设有N个副本，N-1个都宕机了，剩下的那个副本仍能提供读服务；但是只要有一个副本宕机了，写服务就不会成功。</li>
+<li>应用程序先从Cache取数据</li>
+<li>未命中：从DB中取数据，成功后更新到Cache</li>
+<li>命中：应用程序从cache中取数据，取到后返回</li>
 </ol>
-<p>从上述分析可以发现 WARO 读服务的可用性较高，但更新服务的可用性不高，甚至虽然使用副本，但更新服务的可用性等效于没有副本。</p>
-<h2 id="Quorum机制介绍"><a href="#Quorum机制介绍" class="headerlink" title="Quorum机制介绍"></a>Quorum机制介绍</h2><ul>
-<li>Quorum是分布式系统中用来保证数据冗余和最终一致性的投票算法，其主要数学思想来源于鸽巢原理。</li>
-<li>下面将 WARO 的条件进行松弛，从而使得可以在读写服务可用性之间做折中，得出 Quorum 机制。</li>
-<li>假设有N个副本，更新操作wi 在W个副本中更新成功之后，才认为此次更新操作wi 成功。称成功提交的更新操作对应的数据为：“成功提交的数据”。对于读操作而言，至少需要读R个副本才能读到此次更新的数据。其中，W+R&gt;N ，即W和R有重叠。一般，W+R=N+1<br><img src="/img/16211552541601.jpg" alt></li>
-</ul>
-<p>举例：</p>
-<ol>
-<li>假设系统中有5个副本，W=3，R=3。初始时数据为(V1，V1，V1，V1，V1）–成功提交的版本号为1</li>
-<li>当某次更新操作在3个副本上成功后，就认为此次更新操作成功。数据变成：(V2，V2，V2，V1，V1）–成功提交后，版本号变成2</li>
-<li>因此，最多只需要读3个副本，一定能够读到V2(此次更新成功的数据)。而在后台，可对剩余的V1 同步到V2，而不需要让Client知道。</li>
-</ol>
-<p>Quorum 机制的三个系统参数 N、W、R 控制了系统的可用性，也是系统对用户的服务承诺:数 据最多有 N 个副本，但数据更新成功 W 个副本即返回用户成功。对于一致性要求较高的 Quorum 系 统，系统还应该承诺任何时候不读取未成功提交的数据，即读取到的数据都是曾经在 W 个副本上成 功的数据。</p>
-<h2 id="Quorum机制分析"><a href="#Quorum机制分析" class="headerlink" title="Quorum机制分析"></a>Quorum机制分析</h2><h3 id="仅依赖Quorum机制无法保证强一致性"><a href="#仅依赖Quorum机制无法保证强一致性" class="headerlink" title="仅依赖Quorum机制无法保证强一致性"></a>仅依赖Quorum机制无法保证强一致性</h3><ul>
-<li>所谓强一致性就是：任何时刻任何用户或节点都可以读到最近一次成功提交的副本数据。强一致性是程度最高的一致性要求，也是实践中最难以实现的一致性。</li>
-<li>因为，仅仅通过Quorum机制无法确定最新已经成功提交的版本号(除非将最新已提交的版本号作为元数据由特定的元数据服务器或元数 据集群管理)。</li>
-<li>比如，上面的V2 成功提交后（已经写入W=3份），尽管读取3个副本时一定能读到V2，如果刚好读到的是(V2，V2，V2），则此次读取的数据是最新成功提交的数据，因为W=3，而此时刚好读到了3份V2。</li>
-<li>如果读到的是（V2，V1，V1），则无法确定是一个成功提交的版本，还需要继续再读，直到读到V2的达到3份为止，这时才能确定V2 就是已经成功提交的最新的数据。<br><img src="/img/16211553483856.jpg" alt></li>
-</ul>
-<h3 id="如何通过quorum达到强一致性"><a href="#如何通过quorum达到强一致性" class="headerlink" title="如何通过quorum达到强一致性"></a>如何通过quorum达到强一致性</h3><ol>
-<li>限制提交的更新操作必须严格递增，即只有在前一个更新操作成功提交后才可以提交后一 个更新操作，保证成功提交的数据版本号必须是连续增加的</li>
-<li>如何读取最新的数据？—最多读R个副本就可以读到最新的数据了。</li>
-<li>如何确定最高版本号的数据是一个成功提交的数据？—继续读其他的副本，直到读到的 最高版本号副本 出现了W次。</li>
-<li>若不满足，则R中版本号第二大的为最新成功提交的副本</li>
-</ol>
-<p>实际工程中，应该尽量通过其他技术手段，回避通过 Quorum 机制读取最新的成功提交的版本。例如，当 quorum 机制与 primary-secondary 控制协议结合使用时，可以通过读取 primary 的方式读取到 最新的已提交的数据。</p>
-<h3 id="基于-Quorum-机制选择-primary"><a href="#基于-Quorum-机制选择-primary" class="headerlink" title="基于 Quorum 机制选择 primary"></a>基于 Quorum 机制选择 primary</h3><p>选择新的 primary 的工作是由某一额外的中心节点完成。</p>
-<p>中心节点读取 R 个副本，选择 R 个副本中版本号最高的副本作为新的 primary。新 primary 与至少 W 个副本完成数据同步后作为新 的 primary 提供读写服务。</p>
+<p><strong>Update</strong><br><img src="/img/16211559860761.jpg" alt></p>
 <ul>
-<li>R 个副本中一定蕴含了最新的成功提交的数据（即要么是V2,要么是V1）</li>
-<li>虽然不能确定最高版本号的数是一个成功提交的数据，但新的 primary 在随后与 secondary 同步数据，使得该版本的副本个数达到 W，从而使得该版本的数据成为成功提交的数据</li>
+<li>把数据更新到DB中，成功后，让Cache失效</li>
 </ul>
-<p>举例：</p>
-<ul>
-<li>在 N=5，W=3，R=3 的系统中，某时刻副本最大版本号为(v2 v2 v1 v1 v1)，此时 v1 是系统的最新的成功提交的数据，v2 是一个处于中间状态的未成功提交的数据。</li>
-<li>假设此刻原 primary 副本异常，中心节点进行 primary 切换工作。这类“中间态”数据究竟作为“脏数据”被删除，还是作为新的数据被同步后成为生效的数据，完全取决于这个数据能否参与新 primary 的选举，分两种情况：<br><img src="/img/16211554996958.jpg" alt></li>
-</ul>
+<p><strong>存在的问题</strong><br>并发问题<br><img src="/img/16211560315197.jpg" alt></p>
 <ol>
-<li>若中心节点读取到的版本号为(v1 v1 v1)，则任 选一个副本作为 primary，新 primary 以 v1 作为最新的成功提交的版本并与其他副本同步，当与第 1、 第 2 个副本同步数据时，由于第 1、第 2 个副本版本号大于 primary，属于脏数据。<br><img src="/img/16211555196393.jpg" alt></li>
-<li>若中心节点读取到的版本号为(v2 v1 v1)，则选取版本号为 v2 的副本作为新的 primary。之后，一旦新 primary 与其他 2 个副本完成数据同步，则符合 v2 的副本个数达到 W 个，成为最新的成功提交的副本，新 primary 可以提供正常的读写服务。</li>
+<li>先来了Query操作，未命中缓存，然后到DB取数据。</li>
+<li>此时来了Update操作，更新了DB数据。</li>
+<li>此时Query操作获取的就是旧数据，并将旧数据放到了缓存中。</li>
+</ol>
+<p><strong>解决办法</strong></p>
+<ul>
+<li>分析出现概率：低</li>
+<li>出现的条件:<ol>
+<li>读缓存时 缓存失效，而且有并发写操作。</li>
+<li>实际场景，写比读慢得多，还需要锁表。需要满足 读在写操作之前结束又晚于写。</li>
+</ol>
+</li>
+</ul>
+<p>所有条件都具备的概率不大，通过设置合理的过期时间降低问题的影响程度。<br><strong>即，即使缓存出现了脏数据，使其影响范围有限。</strong></p>
+<h3 id="Read-Write-Through"><a href="#Read-Write-Through" class="headerlink" title="Read/Write Through"></a>Read/Write Through</h3><p>更新数据库的操作由缓存代理，在应用层看来，认为后端就是一个单一的存储，这个存储维护自身的Cache<br><img src="/img/16211561394861.jpg" alt><br><strong>Query</strong></p>
+<ul>
+<li>命中：直接返回数据</li>
+<li>未命中：由缓存服务从DB取数据更新到Cache，再返回给应用方。</li>
+</ul>
+<p><strong>Update</strong></p>
+<ul>
+<li>命中：先更新Cache，再更新DB</li>
+<li>未命中：更新DB后直接返回。</li>
+</ul>
+<h3 id="Write-Behind-Caching"><a href="#Write-Behind-Caching" class="headerlink" title="Write Behind Caching"></a>Write Behind Caching</h3><p><img src="/img/16211561999312.jpg" alt></p>
+<ul>
+<li>更新数据时，只更新缓存，不更新数据库</li>
+<li>缓存异步、批量更新数据库</li>
+</ul>
+<h2 id="Cache更新失败的应对策略"><a href="#Cache更新失败的应对策略" class="headerlink" title="Cache更新失败的应对策略"></a>Cache更新失败的应对策略</h2><ul>
+<li>记录日志，补偿保障最终一致性</li>
+<li>异步更新，保障最终一致性</li>
+<li>设计合理的Cache过期时间</li>
+</ul>
+<h2 id="设计缓存时的注意事项"><a href="#设计缓存时的注意事项" class="headerlink" title="设计缓存时的注意事项"></a>设计缓存时的注意事项</h2><p><strong>如何有效缓存数据</strong></p>
+<ul>
+<li>适合缓存的数据<ul>
+<li>很少变化的数据</li>
+<li>在应用程序运行时避免重复计算</li>
+</ul>
+</li>
+<li>缓存的时间<ul>
+<li>第一次由应用程序检索时添加到缓存</li>
+<li>事先在缓存中部分或完全填充数据</li>
+</ul>
+</li>
+</ul>
+<p><strong>管理缓存中的数据过期</strong></p>
+<ul>
+<li>为数据设置过期时间，过期时间为绝对值</li>
+<li>不同对象设置不同过期时间</li>
+</ul>
+<p><strong>缓存填满处理策略</strong></p>
+<ul>
+<li>数据淘汰<ul>
+<li>最近最少使用原则</li>
+<li>最新使用的策略(淘汰刚被用过的数据)</li>
+<li>先进先出(淘汰最近的数据)</li>
+<li>根据业务上已设置的触发条件淘汰</li>
+</ul>
+</li>
+<li>不淘汰，直接报错</li>
+</ul>
+<h2 id="常见问题与防范"><a href="#常见问题与防范" class="headerlink" title="常见问题与防范"></a>常见问题与防范</h2><h3 id="Cache-Penetration-缓存穿透"><a href="#Cache-Penetration-缓存穿透" class="headerlink" title="Cache Penetration(缓存穿透)"></a>Cache Penetration(缓存穿透)</h3><p>查询一条数据库不存在的数据，也就是缓存和数据库都查询不到这条数据，这样请求每次都会穿透到数据库</p>
+<p><strong>解决方法</strong></p>
+<ul>
+<li>缓存空值，注意 设置过期时间</li>
+<li>Bloom Filter,判断一个元素是否存在，不存在直接返回。</li>
+</ul>
+<h3 id="Cache-BreakDown-缓存击穿"><a href="#Cache-BreakDown-缓存击穿" class="headerlink" title="Cache BreakDown(缓存击穿)"></a>Cache BreakDown(缓存击穿)</h3><p>在高并发的系统中，大量的请求同时查询一个 key时，当空上key刚好失效，会导致大量的请求访问数据库，这种现象我们称为缓存击穿。</p>
+<p><strong>解决方法</strong></p>
+<ul>
+<li>并发查询时加锁</li>
+<li>提前异步更新cache，使cache不失效</li>
+</ul>
+<h3 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h3><p>某一时刻发生大规模的缓存失效，包括缓存服务宕机，缓存集体过期等，导致大量的请求进来访问数据库，导致雪崩</p>
+<p><strong>解决办法</strong></p>
+<ul>
+<li>过期时间有一定的随机性</li>
+<li>对DB做熔断、降级、限流</li>
+</ul>
+<h3 id="热点数据集中失效"><a href="#热点数据集中失效" class="headerlink" title="热点数据集中失效"></a>热点数据集中失效</h3><p>缓存数据使用相同的过期时间，如果在同一时刻同时多个热点数据过期，可能导致对数据库的访问急剧升高。</p>
+<p><strong>解决办法</strong></p>
+<ul>
+<li>失效时间有一定的随机性</li>
+<li>互斥锁<ul>
+<li>需要查DB的请求先获取锁，只有获取到锁的才能查询。查询成功后更新缓存，并释放锁</li>
+<li>获取到锁的线程 判断cache是否已经有数据，有数据直接返回，没有数据再请求DB</li>
+<li>注意：这种方式会阻塞并发查询，系统吞吐量下降，需要结合实际业务场景考虑使用</li>
+</ul>
+</li>
+</ul>
+<h3 id="缓存脏数据"><a href="#缓存脏数据" class="headerlink" title="缓存脏数据"></a>缓存脏数据</h3><p>指更新后的缓存数据与数据库数据不一致，导致影响业务。</p>
+<p><strong>解决办法</strong></p>
+<ul>
+<li>严格cr，全方面测试</li>
+<li>防御性编程：缓存更新成功后，检查cache与DB是否一致</li>
+<li>限制缓存写入点</li>
+<li>建立缓存数据正确性监控/告警机制</li>
+<li>设置缓存失效开关。注意 需要同时配备防缓存雪崩、缓存快速重建机制</li>
+</ul>
+<h2 id="缓存的监控"><a href="#缓存的监控" class="headerlink" title="缓存的监控"></a>缓存的监控</h2><ul>
+<li>使用的内存量</li>
+<li>总读取次数</li>
+<li>总写入次数</li>
+<li>总命中次数</li>
+<li>读失败数</li>
+<li>写失败数</li>
+<li>单Key读次数</li>
+<li>单Key写次数</li>
+<li>安全性相关监控</li>
+</ul>
+<h2 id="缓存失效容忍性演练"><a href="#缓存失效容忍性演练" class="headerlink" title="缓存失效容忍性演练"></a>缓存失效容忍性演练</h2><p>定期演练：</p>
+<ol>
+<li>具备真实流量压测能力</li>
+<li>模拟缓存雪崩场景，例如使用缓存功能开关，关闭缓存</li>
+<li>验证熔断机制</li>
+<li>验证限流机制</li>
+<li>验证降级机制</li>
+<li>验证DB可用性</li>
 </ol>
 ]]></content>
       <categories>
         <category>技术</category>
-        <category>分布式系统</category>
       </categories>
       <tags>
-        <tag>分布式系统</tag>
-        <tag>quorum</tag>
+        <tag>缓存</tag>
       </tags>
   </entry>
   <entry>
