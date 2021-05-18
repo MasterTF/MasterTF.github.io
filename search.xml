@@ -3,7 +3,7 @@
   <entry>
     <title>用户体验要素</title>
     <url>/2021/05/12/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E8%A6%81%E7%B4%A0/</url>
-    <content><![CDATA[<p><img src="http://km.oa.com/files/photos/pictures/202105/1620372696_52_w1894_h1502.png" alt="enter image description here"></p>
+    <content><![CDATA[<p><img src="/img/16213441795165.jpg" alt="-w647"></p>
 <a id="more"></a>
 <h2 id="为什么用户体验如此重要"><a href="#为什么用户体验如此重要" class="headerlink" title="为什么用户体验如此重要"></a>为什么用户体验如此重要</h2><p><strong>1. 用户体验并不是指一件产品本身是如何工作的，而是指“产品如何与外界发生联系并发挥作用”，也就是人们如何“接触”和“使用”它。</strong></p>
 <ul>
@@ -47,7 +47,7 @@
 <li>考虑涉众的诉求，从涉众角度看问题，优先满足“老大”的利益。</li>
 <li>用户体验对你很重要一个最大的理由是：它对你的用户很重要。如果没有给他们一个积极的体验，他们不会使用你的产品。如果没有用户，你租后所得到的只是一台藏在某个角落里、布满了灰尘的网络服务器。对于那些来造访的用户，你必须为他们规划一个有粘性的、直观明了甚至还让人愉快地体验——<strong>一次“没见识都按照正确的方式在工作”的体验，而不管他们这一天的其他时间是如何度过的</strong></li>
 </ul>
-<h2 id="战略层"><a href="#战略层" class="headerlink" title="战略层"></a>战略层</h2><p>要满足的用户需求和公司的商业目标.<br><img src="http://km.oa.com/files/photos/pictures/202105/1620372785_66_w1800_h766.png" alt="enter image description here"></p>
+<h2 id="战略层"><a href="#战略层" class="headerlink" title="战略层"></a>战略层</h2><p>要满足的用户需求和公司的商业目标.<br><img src="/img/16213442096937.jpg" alt="-w656"></p>
 <ol>
 <li>我们要通过这个产品得到什么</li>
 <li>我们的用户要通过这个产品得到什么<br>分别对应产品目标与用户需求</li>
@@ -75,7 +75,7 @@
 <li>收集各种各样的用户数据是非常有价值的，但有时候会忽略统计数字背后所代表的真正恩物。通过创建<strong>任务角色</strong>，有时也叫用户模型或用户简介，可以让用户变得更加真实。</li>
 <li>人物角色是从用户研究中提取出的可称为样例的虚构人物。</li>
 </ul>
-<h2 id="范围层"><a href="#范围层" class="headerlink" title="范围层"></a>范围层</h2><p>产品的功能范围，就是具体要做哪些事情？<br><img src="http://km.oa.com/files/photos/pictures/202105/1620372810_59_w1968_h934.png" alt="enter image description here"></p>
+<h2 id="范围层"><a href="#范围层" class="headerlink" title="范围层"></a>范围层</h2><p>产品的功能范围，就是具体要做哪些事情？<br><img src="/img/16213442344620.jpg" alt="-w657"></p>
 <p>战略层讨论“我们为什么要开发这个产品”，范围层讨论“我们要开发的是什么？”<br>(感觉是用例名称+后置条件)</p>
 <p>撰写功能规格说明书的几条原则：</p>
 <ol>
@@ -96,7 +96,7 @@
 <li><p>避免主观的语气。</p>
 </li>
 </ol>
-<h2 id="结构层"><a href="#结构层" class="headerlink" title="结构层"></a>结构层</h2><p>页面与页面之间的跳转关系，例如登录完成后，跳转至主页面，还是完善资料页面？<br><img src="http://km.oa.com/files/photos/pictures/202105/1620372839_73_w1954_h912.png" alt="enter image description here"></p>
+<h2 id="结构层"><a href="#结构层" class="headerlink" title="结构层"></a>结构层</h2><p>页面与页面之间的跳转关系，例如登录完成后，跳转至主页面，还是完善资料页面？<br><img src="/img/16213442562069.jpg" alt="-w651"></p>
 <ul>
 <li>需求并没有说明如何将分散的片段组成一个整体。结构层为网站创建一个概念结构。</li>
 <li>功能型产品在结构层关注交互设计，信息型产品关注 信息架构，但都强调一个重点：<strong>确定各个将要呈现给用户的元素的模式(pattern)和顺序(sequence)。</strong></li>
@@ -167,12 +167,12 @@
 <li>用户在所有路径中的 <strong>行为；</strong> </li>
 <li>用户行为在系统产生的 <strong>结果</strong> ；<br>详细内容参见：<a href="http://www.jjg.net/ia/visvocab/chinese.html#under" target="_blank" rel="noopener">http://www.jjg.net/ia/visvocab/chinese.html#under</a></li>
 </ul>
-<p><img src="http://km.oa.com/files/photos/pictures/202105/1620307916_71_w1123_h1280.png" alt="enter image description here"></p>
+<p><img src="/img/16213443156231.jpg" alt="-w658"></p>
 <h2 id="框架层"><a href="#框架层" class="headerlink" title="框架层"></a>框架层</h2><p>多元素布局位置，例如登录、注册按钮放哪里。</p>
 <blockquote>
 <p>主要解决放置的事情。界面设计考虑可交互元素的布局，导航设计考虑在产品中引导用户移动的元素的安排，信息设计考虑传达给用户的信息要素的排列</p>
 </blockquote>
-<p><img src="http://km.oa.com/files/photos/pictures/202105/1620373013_96_w2004_h956.png" alt="enter image description here"></p>
+<p><img src="/img/16213443326371.jpg" alt="-w656"><br><img src="http://km.oa.com/files/photos/pictures/202105/1620373013_96_w2004_h956.png" alt="enter image description here"></p>
 <h3 id="框架层定义"><a href="#框架层定义" class="headerlink" title="框架层定义"></a>框架层定义</h3><ul>
 <li><strong>结构层充满了概念</strong>，在框架层，要更进一步提炼这些结构，确定很详细的界面外观、导航和信息设计，让晦涩的机构变得更实在。</li>
 <li><strong>结构层界定了我们的产品将用什么样的方式运作，框架层则用于确定用什么样的功能和形式来实现。</strong></li>
@@ -223,12 +223,18 @@
 </blockquote>
 <p><strong>几种常见的导航系统</strong></p>
 <ol>
-<li>全局导航：全局并不是暗示导航会出现在网站的每一个页面(即使这不算是个坏主意。使用“固定”一词来表示贯穿着整个网站的导航；再次提醒，固定的元素不一定就是全局的)。<strong>全局导航提供的是用户最有可能需要从网站的最终页面到其他什么地方的一组关键点。全局导航的一个经典应用，就是在导航栏放上能到网站所有主要栏目的链接。</strong><br><img src="http://km.oa.com/files/photos/pictures/202105/1620443992_13_w3260_h854.png" alt="enter image description here"></li>
-<li>局部导航：提供给用户在这个架构中到“附近地点”的通路。在一个严格的层次结构中，局部导航可能只提供一个页面的父级、兄弟级和子级通路。如果你的架构反映了用户对这个网站的内容结构的思路，那么局部导航通常比其他导航更有用。<br><img src="http://km.oa.com/files/photos/pictures/202105/1620444039_4_w1396_h428.png" alt="enter image description here"></li>
-<li>辅助导航：提供了全局导航或局部导航不能快速达到的相关内容的快捷途径。允许用户转移浏览时的方向，而不需要从头开始。<br><img src="http://km.oa.com/files/photos/pictures/202105/1620444056_14_w1384_h356.png" alt="enter image description here"></li>
-<li>上下文导航：嵌入页面自身内容的一种导航。这种导航常常没有得到充分利用或应用不当。（类似markdown文章里的导航。）用户需要额外信息的时候，一般是在他们读文本的时候。与其强迫用户扫描右侧的导航元素，还不如放一些相关链接在他正在读的地方。<br><img src="http://km.oa.com/files/photos/pictures/202105/1620444071_57_w1368_h424.png" alt="enter image description here"></li>
-<li>友好导航：提供给用户他们通常不会需要的链接，但他们是作为一种便利的途径来使用的。一些必要信息虽不常用，但很重要，联系信息、反馈表单和法律声明的链接通常放在友好导航中。<br><img src="http://km.oa.com/files/photos/pictures/202105/1620444083_8_w1292_h486.png" alt="enter image description here"></li>
-<li>网站地图：给用户一个简明的、单页的网站整体结构的快捷浏览方式。网站地图通常不会显示超过两个层级的导航，更详细的内容往往超出了用户的需求。</li>
+<li><p>全局导航：全局并不是暗示导航会出现在网站的每一个页面(即使这不算是个坏主意。使用“固定”一词来表示贯穿着整个网站的导航；再次提醒，固定的元素不一定就是全局的)。<strong>全局导航提供的是用户最有可能需要从网站的最终页面到其他什么地方的一组关键点。全局导航的一个经典应用，就是在导航栏放上能到网站所有主要栏目的链接。</strong><br><img src="/img/16213443654855.jpg" alt="-w632"></p>
+</li>
+<li><p>局部导航：提供给用户在这个架构中到“附近地点”的通路。在一个严格的层次结构中，局部导航可能只提供一个页面的父级、兄弟级和子级通路。如果你的架构反映了用户对这个网站的内容结构的思路，那么局部导航通常比其他导航更有用。<br><img src="/img/16213443824588.jpg" alt="-w628"></p>
+</li>
+<li><p>辅助导航：提供了全局导航或局部导航不能快速达到的相关内容的快捷途径。允许用户转移浏览时的方向，而不需要从头开始。<br><img src="/img/16213443966660.jpg" alt="-w605"></p>
+</li>
+<li><p>上下文导航：嵌入页面自身内容的一种导航。这种导航常常没有得到充分利用或应用不当。（类似markdown文章里的导航。）用户需要额外信息的时候，一般是在他们读文本的时候。与其强迫用户扫描右侧的导航元素，还不如放一些相关链接在他正在读的地方。<br><img src="/img/16213444113224.jpg" alt="-w609"></p>
+</li>
+<li><p>友好导航：提供给用户他们通常不会需要的链接，但他们是作为一种便利的途径来使用的。一些必要信息虽不常用，但很重要，联系信息、反馈表单和法律声明的链接通常放在友好导航中。<br><img src="/img/16213444266980.jpg" alt="-w623"></p>
+</li>
+<li><p>网站地图：给用户一个简明的、单页的网站整体结构的快捷浏览方式。网站地图通常不会显示超过两个层级的导航，更详细的内容往往超出了用户的需求。</p>
+</li>
 <li>索引表：按字母顺序排列的、连击刀相关页面的列表。索引表有时为网站的某个部分特别开发，而不是要覆盖整个网站的内容。</li>
 </ol>
 <h3 id="信息设计"><a href="#信息设计" class="headerlink" title="信息设计"></a>信息设计</h3><p>决定如何呈现信息，使人们能很容易使用或理解。</p>
@@ -243,7 +249,7 @@
 <li>通过识别和定义核心导航系统来整合导航设计</li>
 <li>通过放置和排列信息组成部分的优先级来整合信息设计<br>把这三者放到线框图中，可以确定一个建立在基本概念结构上的架构，同时指出了表现层的设计应该前进的方向。</li>
 </ul>
-<h2 id="表现层"><a href="#表现层" class="headerlink" title="表现层"></a>表现层</h2><p>解决并弥补“产品框架层的逻辑排布”的感知呈现问题<br><img src="http://km.oa.com/files/photos/pictures/202105/1620373086_49_w2078_h884.png" alt="enter image description here"></p>
+<h2 id="表现层"><a href="#表现层" class="headerlink" title="表现层"></a>表现层</h2><p>解决并弥补“产品框架层的逻辑排布”的感知呈现问题<br><img src="/img/16213444477042.jpg" alt="-w645"></p>
 <p><strong>合理设计感知</strong><br>感受由五个方面组成：</p>
 <ol>
 <li>视觉</li>
@@ -308,7 +314,7 @@
 <li>规模效应好，应该是规模越大，竞争对手越少。比如微信；反之，淘宝、外卖并不是，即使做得很大，仍然有竞对。</li>
 <li>总的来说，和人的个体的创意关系很大、和人的个体主观能动性关系很大的就没什么规模效应</li>
 </ul>
-<h4 id="规模效应的形状"><a href="#规模效应的形状" class="headerlink" title="规模效应的形状"></a>规模效应的形状</h4><p><img src="http://km.oa.com/files/photos/pictures/202103/1616999919_12_w982_h594.png" alt="enter image description here"></p>
+<h4 id="规模效应的形状"><a href="#规模效应的形状" class="headerlink" title="规模效应的形状"></a>规模效应的形状</h4><p><img src="/img/16213445213419.jpg" alt="-w624"></p>
 <ol>
 <li>A曲线最典型的是网络效应，有网络效应的一个例子是互联网本身，公式是互联网的价值和节点数的平方成正比。有网络效应的生意最典型的例子是社交网络，微信是一个非常典型的网状结构，</li>
 <li>B这条线是淘宝，每多一个用户淘宝都能接纳，淘宝就增加一点价值，但用户和用户之间 没啥竞争，所以淘宝的价值是随着规模线性上升的。这解释了很多问题，淘宝做到今天它 的竞争对手是在变多的，淘宝2003年起家，2010年京东发展得很快，现在拼多多发展得很快，你已经做的这么大了还有竞争对手不断进来这就说明了你的规模效应不够强。</li>
@@ -375,7 +381,7 @@
 <li>另外一种错误的行为是找到了PMF却没有发力猛搞;更多的团队是在找PMF的过程中丧失信心散掉了。</li>
 <li>找PMF是很难的，后面的《创新的扩散》、STP、4P就是在帮你找到这个PMF</li>
 </ul>
-<h3 id="创新的扩散"><a href="#创新的扩散" class="headerlink" title="创新的扩散"></a>创新的扩散</h3><p><img src="http://km.oa.com/files/photos/pictures/202103/1617010694_99_w1914_h668.png" alt="enter image description here"></p>
+<h3 id="创新的扩散"><a href="#创新的扩散" class="headerlink" title="创新的扩散"></a>创新的扩散</h3><p><img src="/img/16213445491897.jpg" alt></p>
 <ul>
 <li>极少情况下会一个产品各阶段用户的接受速度差不多，毕竟iPhone也是做到第四代才大红大紫，一个产品不太可能在一开始就尽善尽美，有一部分用户在产品还很糙的时候就愿意用，要优先匹配这部分用户的需求，根据STP选择ROI最高的市场和产品。</li>
 <li>在产品设计和市场推广的过程中能分清扩散的阶段和匹配扩散阶段设计产品会极大的提高 ROI，当资金、组织能力、研发能力都上来之后再拓展新的人群，提供更好的产品。</li>
@@ -474,20 +480,20 @@
 <ul>
 <li>业务建模：领域模型制品，使应用领域中的重要概念的可视化。</li>
 <li>需求：用以补货功能需求和非功能需求的用例模型机器补充性的规格说明制品。</li>
-<li>设计：设计模型制品，用于对软件对象进行设计。<br><img src="http://km.oa.com/files/photos/pictures/202103/1615884745_96_w2298_h1414.png" alt="enter image description here"></li>
+<li>设计：设计模型制品，用于对软件对象进行设计。<br><img src="/img/16213446274566.jpg" alt></li>
 </ul>
-<p><img src="http://km.oa.com/files/photos/pictures/202103/1615884761_1_w2076_h690.png" alt="enter image description here"></p>
-<h2 id="OOA-领域模型"><a href="#OOA-领域模型" class="headerlink" title="OOA:领域模型"></a>OOA:领域模型</h2><p>领域模型是OOA最重要的模型，阐述领域中的重要概念。<br>领域模型可以作为设计某些软件对象的灵感来源，也作为其他产出物的输入：<br><img src="http://km.oa.com/files/photos/pictures/202103/1614828586_28_w1029_h987.png" alt="enter image description here"></p>
+<p><img src="/img/16213446351071.jpg" alt></p>
+<h2 id="OOA-领域模型"><a href="#OOA-领域模型" class="headerlink" title="OOA:领域模型"></a>OOA:领域模型</h2><p>领域模型是OOA最重要的模型，阐述领域中的重要概念。<br>领域模型可以作为设计某些软件对象的灵感来源，也作为其他产出物的输入：<br><img src="/img/16213446468416.jpg" alt></p>
 <blockquote>
 <p>领域模型是对领域内的概念类或现实世界中对象的可视化表示[MO95,Fowler96].领域模型也成为概念模型、领域对象模型和分析对象模型。</p>
 </blockquote>
 <p>在UP中，领域模型指的是对现实世界概念类的表示，而非软件对象的表示。该术语并不是指用来描述软件类、软件架构领域层或职责软件对象的一组图。</p>
 <h3 id="领域模型和数据模型是一回事吗？"><a href="#领域模型和数据模型是一回事吗？" class="headerlink" title="领域模型和数据模型是一回事吗？"></a>领域模型和数据模型是一回事吗？</h3><p>领域模型不是数据模型。<br>在领域模型里，即使需求没要求记录相关信息的类 也可能出现在领域模型中。</p>
 <h3 id="为什么要创建领域模型"><a href="#为什么要创建领域模型" class="headerlink" title="为什么要创建领域模型"></a>为什么要创建领域模型</h3><ol>
-<li><p>面向对象的关键思想：领域层软件类的名称要源于领域模型中的名称，使对象具有源于领域的信息和职责。有助于减小人的思维与软件模型之间的差异。<br><img src="http://km.oa.com/files/photos/pictures/202103/1614760525_37_w1992_h1362.png" alt="enter image description here"></p>
-</li>
-<li><p>方便变更与扩展</p>
-</li>
+<li>面向对象的关键思想：领域层软件类的名称要源于领域模型中的名称，使对象具有源于领域的信息和职责。有助于减小人的思维与软件模型之间的差异。<br><img src="/img/16213446617898.jpg" alt></li>
+</ol>
+<ol start="2">
+<li>方便变更与扩展</li>
 <li>管理和隐藏复杂性</li>
 </ol>
 <h3 id="准则"><a href="#准则" class="headerlink" title="准则"></a>准则</h3><h4 id="准则：如何创建领域模型"><a href="#准则：如何创建领域模型" class="headerlink" title="准则：如何创建领域模型"></a>准则：如何创建领域模型</h4><ol>
@@ -506,7 +512,7 @@
 <li>不要凭空增加事物</li>
 </ol>
 <h4 id="准则：属性与类的常见错误"><a href="#准则：属性与类的常见错误" class="headerlink" title="准则：属性与类的常见错误"></a>准则：属性与类的常见错误</h4><p>创建领域模型时最常见的错误是把应该是概念类的事物表示为属性。<br>避免这类错误的方法：<br><strong>如果我们认为某概念类X不是现实世界中的数字或文本,那么X可能是概念类而不是属性。</strong></p>
-<h4 id="准则：何时使用“描述”类建模"><a href="#准则：何时使用“描述”类建模" class="headerlink" title="准则：何时使用“描述”类建模"></a>准则：何时使用“描述”类建模</h4><p>描述类(descrition class) 包含描述其他事物的信息，如ProductDescription记录item的价格、图片和文字描述。</p>
+<h4 id="准则：何时使用“描述”类建模"><a href="#准则：何时使用“描述”类建模" class="headerlink" title="准则：何时使用“描述”类建模"></a>准则：何时使用“描述”类建模</h4><p>描述类(description class) 包含描述其他事物的信息，如ProductDescription记录item的价格、图片和文字描述。</p>
 <ol>
 <li>需要有关商品或服务的描述，对于任何商品或服务的现有实例。</li>
 <li>删除其所有事物的实例后，导致信息丢失，而这些信息是需要维护的。</li>
@@ -527,7 +533,7 @@
 <h4 id="准则：不要讲概念X的状态建模为X的子类"><a href="#准则：不要讲概念X的状态建模为X的子类" class="headerlink" title="准则：不要讲概念X的状态建模为X的子类"></a>准则：不要讲概念X的状态建模为X的子类</h4><p>有两种可选方案：</p>
 <ol>
 <li>新建 状态类，并与X关联</li>
-<li>领域模型中忽略状态的概念，在状态图中显示。<br><img src="http://km.oa.com/files/photos/pictures/202103/1615882548_32_w1670_h964.png" alt="enter image description here"></li>
+<li>领域模型中忽略状态的概念，在状态图中显示。<br><img src="/img/16213447211081.jpg" alt></li>
 </ol>
 <h4 id="准则：在领域模型中增加关联类的可能线索"><a href="#准则：在领域模型中增加关联类的可能线索" class="headerlink" title="准则：在领域模型中增加关联类的可能线索"></a>准则：在领域模型中增加关联类的可能线索</h4><ol>
 <li>有某个属性与关联相关</li>
@@ -550,7 +556,7 @@
 <h4 id="准则：何时表示关联"><a href="#准则：何时表示关联" class="headerlink" title="准则：何时表示关联"></a>准则：何时表示关联</h4><p>关联表示了需要持续一旦时间的关系，根据语境，可能是毫秒或数年。需要记录哪些对象之间的关系？<br>领域模型是从概念角度出发的，所以是否需要记录关联，要基于现实世界的需要而不是软件的需要。</p>
 <h4 id="准则：为什么应该避免加入大量关联"><a href="#准则：为什么应该避免加入大量关联" class="headerlink" title="准则：为什么应该避免加入大量关联"></a>准则：为什么应该避免加入大量关联</h4><p>关联太多会产生“视觉干扰”，使图变得混乱。重点关注“需要记住”的关联</p>
 <h4 id="观点：关联是否会在软件中实现"><a href="#观点：关联是否会在软件中实现" class="headerlink" title="观点：关联是否会在软件中实现"></a>观点：关联是否会在软件中实现</h4><p>关联不是关于数据流、数据库外键联系、实例变量或软件方案中的对象连接的语句；关联声明的是针对现实，领域从纯概念角度看有意义的关系。<br>这些关系大部分将作为设计模型和数据模型中的导航和可见性路径在软件中实现。但是领域模型不是数据模型，添加关联是为了突出我们对重要关系的大致理解，而非记录对象或数据的结构。</p>
-<h3 id="多重性"><a href="#多重性" class="headerlink" title="多重性"></a>多重性</h3><p>多重性(multiplicity)定义了类A有多少个实例可以和类B的一个实例关联。<br>两个类可能有多重关联，应当分别表示。如航班和机场的关系，一个机场有多个航班，但可以继续区分为飞来的航班，和离开的航班<br><img src="http://km.oa.com/files/photos/pictures/202103/1614763177_75_w1032_h354.png" alt="enter image description here"></p>
+<h3 id="多重性"><a href="#多重性" class="headerlink" title="多重性"></a>多重性</h3><p>多重性(multiplicity)定义了类A有多少个实例可以和类B的一个实例关联。<br>两个类可能有多重关联，应当分别表示。如航班和机场的关系，一个机场有多个航班，但可以继续区分为飞来的航班，和离开的航班<br><img src="/img/16213447369902.jpg" alt></p>
 <h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p>属性(attribute)是对象的逻辑数据值</p>
 <h4 id="准则：何时展示属性"><a href="#准则：何时展示属性" class="headerlink" title="准则：何时展示属性"></a>准则：何时展示属性</h4><p>当需求建议或暗示需要记住信息时，引入属性。</p>
 <h4 id="准则：什么样的属性是适当的"><a href="#准则：什么样的属性是适当的" class="headerlink" title="准则：什么样的属性是适当的"></a>准则：什么样的属性是适当的</h4><ol>
@@ -578,15 +584,15 @@
 </ul>
 <p>不管是哪种定义，所有软件架构定义的共同主题是，必须与宏观事物有关——动机、约束、组织、模式、职责和系统指连接(或系统之系统)的重要思想。</p>
 <ul>
-<li><p>层(layer)：对类、包或子系统的粗粒度分组，具有对系统主要方面加以内聚的职责。”较高”层可以调用”较低”层，反之不能。OO系统中常见的分层：</p>
-<ul>
+<li>层(layer)：对类、包或子系统的粗粒度分组，具有对系统主要方面加以内聚的职责。”较高”层可以调用”较低”层，反之不能。OO系统中常见的分层：<ul>
 <li>用户界面</li>
 <li>应用逻辑和软件对象</li>
-<li>技术服务：提供支持性技术服务的常用对象和子系统，例如蜀葵恶寇或错误日志。这些服务通常是独立于应用的，也可在多个系统复用。<br><img src="http://km.oa.com/files/photos/pictures/202103/1614842552_58_w592_h589.png" alt="enter image description here"></li>
+<li>技术服务：提供支持性技术服务的常用对象和子系统，例如蜀葵恶寇或错误日志。这些服务通常是独立于应用的，也可在多个系统复用。<br><img src="/img/16213447510519.jpg" alt></li>
 </ul>
 </li>
-<li><p>分层架构解决的问题：</p>
+</ul>
 <ul>
+<li>分层架构解决的问题：<ul>
 <li>大部分系统是高度耦合的，代码变更会波及整个系统</li>
 <li>应用逻辑与用户界面耦合，应用逻辑部分无法复用</li>
 <li>一般性技术服务与应用逻辑耦合，不能复用</li>
@@ -630,9 +636,9 @@
 <li>类图</li>
 <li>UI的草图和原型</li>
 <li>数据库模型</li>
-<li>报表的草图和原型<br><img src="http://km.oa.com/files/photos/pictures/202103/1614847842_59_w996_h1182.png" alt="enter image description here"></li>
+<li>报表的草图和原型<br><img src="/img/16213448515627.jpg" alt></li>
 </ul>
-<h2 id="GRASP-基于职责设计对象"><a href="#GRASP-基于职责设计对象" class="headerlink" title="GRASP:基于职责设计对象"></a>GRASP:基于职责设计对象</h2><p>OOD之前的输入：<br><img src="http://km.oa.com/files/photos/pictures/202103/1614847764_73_w1030_h357.png" alt="enter image description here"></p>
+<h2 id="GRASP-基于职责设计对象"><a href="#GRASP-基于职责设计对象" class="headerlink" title="GRASP:基于职责设计对象"></a>GRASP:基于职责设计对象</h2><p>OOD之前的输入：<br><img src="/img/16213447921708.jpg" alt></p>
 <ul>
 <li>用例</li>
 <li>序列图</li>
@@ -1390,7 +1396,7 @@
 <p>CRP实际是ISP原则的普世版，两个原则可以用一句话概括：<strong>不要依赖不需要用到的东西</strong></p>
 <h4 id="组件聚合张力图"><a href="#组件聚合张力图" class="headerlink" title="组件聚合张力图"></a>组件聚合张力图</h4><ul>
 <li>REP和CCP是粘合性原则，会让组件变得更大</li>
-<li>CRP是排除性原则，会让组件变小<br>架构师就是在三个原则中取舍，可以用组件聚合张力图描述三者关系：<br><img src="http://km.oa.com/files/photos/pictures/202101/1610098530_17_w524_h405.png" alt="enter image description here"></li>
+<li>CRP是排除性原则，会让组件变小<br>架构师就是在三个原则中取舍，可以用组件聚合张力图描述三者关系：<br><img src="/img/16213450263653.jpg" alt></li>
 </ul>
 <p>在项目早期，CCP原则会比REP原则更重要，因为这一阶段研发速度比复用性更重要。</p>
 <p>一般来说，一个软件项目的重心会从该三角区域的右侧开始，先期主要牺牲的是复用性。然后，随着项目逐渐成熟，其他项目会逐渐开始对其产生依赖，项目重心就会逐渐向该三角区域的左侧滑动。</p>
@@ -1407,8 +1413,8 @@
 <p>I：不稳定性，I=Fan-out/（Fan-in+Fan-out）。该指标的范围是[0,1],I=0意味着组件是最稳定的，I=1意味着组件是最不稳定的.</p>
 <p><strong>稳定依赖原则（SDP）的要求是组件结构依赖图中各组件的I指标必须要按其依赖关系方向递减。</strong></p>
 <p>注意，并不是所有的组件都是稳定的，都是稳定的就意味着不能改了，失去了扩展性。<br>关键是保障核心组建的稳定性，分离变与不变。</p>
-<p>经常违反DIP原则的例子就是业务逻辑依赖了界面展示:<br><img src="http://km.oa.com/files/photos/pictures/202101/1610178415_34_w1280_h1036.png" alt="enter image description here"></p>
-<p>如何修复?<br>DIP是个神器。<br><img src="http://km.oa.com/files/photos/pictures/202101/1610178470_19_w1222_h472.png" alt="enter image description here"></p>
+<p>经常违反SDP原则的例子就是业务逻辑依赖了界面展示:<br><img src="/img/16213454348239.jpg" alt="-w425"></p>
+<p>如何修复?<br>DIP是个神器。<br><img src="/img/16213453483959.jpg" alt="-w405"></p>
 <h4 id="SAP：THE-STABLE-ABSTRACTIONS-PRINCIPLE（稳定抽象原则）"><a href="#SAP：THE-STABLE-ABSTRACTIONS-PRINCIPLE（稳定抽象原则）" class="headerlink" title="SAP：THE STABLE ABSTRACTIONS PRINCIPLE（稳定抽象原则）"></a>SAP：THE STABLE ABSTRACTIONS PRINCIPLE（稳定抽象原则）</h4><p>一个组件的抽象化程度应该与其稳定性保持一致。</p>
 <p>如果我们将高阶策略放入稳定组件中，那么用于描述那些策略的源代码就很难被修改了。这可能会导致整个系统的架构设计难于被修改。</p>
 <p>如何才能让一个无限稳定的组件（I=0）接受变更呢？开闭原则（OCP）为我们提供了答案。</p>
@@ -1418,10 +1424,10 @@
 <p>然而，DIP毕竟是与类这个层次有关的原则——对类来说，设计是没有灰色地带的。一个类要么是抽象类，要么就不是。<strong>SDP与SAP这对原则是应用在组件层面上的，我们要允许一个组件部分抽象，部分稳定。</strong></p>
 <h5 id="衡量抽象化程度"><a href="#衡量抽象化程度" class="headerlink" title="衡量抽象化程度"></a>衡量抽象化程度</h5><p>Nc：组件中类的数量。<br>Na：组件中抽象类和接口的数量。<br>A：抽象程度，A=Na÷Nc。</p>
 <p>A指标的取值范围是从0到1，值为0代表组件中没有任何抽象类，值为1就意味着组件中只有抽象类。</p>
-<h5 id="主序列图"><a href="#主序列图" class="headerlink" title="主序列图"></a>主序列图</h5><p>组件的稳定性I与其抽象化程度A之间的关系：<br>纵轴为A值，横轴为I值。<br><img src="http://km.oa.com/files/photos/pictures/202101/1610179931_76_w994_h960.png" alt="enter image description here"></p>
+<h5 id="主序列图"><a href="#主序列图" class="headerlink" title="主序列图"></a>主序列图</h5><p>组件的稳定性I与其抽象化程度A之间的关系：<br>纵轴为A值，横轴为I值。<br><img src="/img/16213454936325.jpg" alt="-w325"></p>
 <p>最稳定的、包含了无限抽象类的组件应该位于左上角（0,1），最不稳定的、最具体的组件应该位于右下角（1,0）。</p>
 <p>不可能所有的组件都能处于这两个位置上，因为组件通常都有各自的稳定程度和抽象化程度。</p>
-<p><img src="http://km.oa.com/files/photos/pictures/202101/1610180141_90_w1138_h1000.png" alt="enter image description here"></p>
+<p><img src="/img/16213455127357.jpg" alt="-w414"><br><img src="http://km.oa.com/files/photos/pictures/202101/1610180141_90_w1138_h1000.png" alt="enter image description here"></p>
 <h5 id="痛苦区"><a href="#痛苦区" class="headerlink" title="痛苦区"></a>痛苦区</h5><p>一个不抽象的组件，但却很稳定，稳定的原因是被其他组件所依赖。<br>这样的组件在设计上是不佳的，因为它很难被修改，这意味着该组件不能被扩展。<br>这样一来，因为这个组件不是抽象的，而且它又由于稳定性的原因变得特别难以被修改，我们并不希望一个设计良好的组件贴近这个区域，因此（0,0）周围的这个区域被我们称为痛苦区（zone of pain）。</p>
 <p>最好的例子就是数据库中的表了。表结构十分具体，被其他组件依赖，每次修改都痛苦万分。</p>
 <p>另一个会处于这个区域的典型软件组件是工具型类库。例如String组件，虽然其中所有的类都是具体的，但由于它被使用得太过普遍，任何修改都会造成大范围的混乱，因此String组件只能是不可变的。</p>
@@ -1447,9 +1453,9 @@
 <p>为了在软件架构中画边界线，我们需要先将系统分割成组件，其中一部分是系统的核心业务逻辑组件，而另一部分则是与核心业务逻辑无关但负责提供必要功能的插件。然后通过对源代码的修改，让这些非核心组件依赖于系统的核心业务逻辑组件。其实，这也是一种对依赖反转原则（DIP）和稳定抽象原则（SAP）的具体应用，依赖箭头应该由底层具体实现细节指向高层抽象的方向。</p>
 </blockquote>
 <p>这一节讲的有点啰嗦，重点在于如何划分边界？<br>原则就是让核心业务逻辑组件成为高层组件，界面、数据库、输入/输出等都与核心组件都应划分边界，让具体的组件依赖核心组件。</p>
-<p>这样做的好处是可以构建插件式架构。核心业务逻辑不变，其他的全可以插拔式替换。<br><img src="http://km.oa.com/files/photos/pictures/202101/1610182396_54_w1432_h966.png" alt="enter image description here"></p>
+<p>这样做的好处是可以构建插件式架构。核心业务逻辑不变，其他的全可以插拔式替换。<br><img src="/img/16213456311880.jpg" alt="-w521"></p>
 <h3 id="业务逻辑"><a href="#业务逻辑" class="headerlink" title="业务逻辑"></a>业务逻辑</h3><p>业务逻辑是一个软件系统存在的意义，它们属于核心功能，是系统用来赚钱或省钱的那部分代码，是整个系统中的皇冠明珠。这些业务逻辑应该保持纯净，不要掺杂用户界面或者所使用的数据库相关的东西。<br>在理想情况下，这部分代表业务逻辑的代码应该是整个系统的核心，其他低层概念的实现应该以插件形式接入系统中。业务逻辑应该是系统中最独立、复用性最高的代码。</p>
-<h3 id="整洁架构"><a href="#整洁架构" class="headerlink" title="整洁架构"></a>整洁架构</h3><p>有一条贯穿整个架构设计的依赖关系规则：源码中的依赖关系必须只指向同心圆的内层，即由低层机制指向高层策略。<br><img src="http://km.oa.com/files/photos/pictures/202101/1610183293_72_w1330_h960.png" alt="enter image description here"></p>
+<h3 id="整洁架构"><a href="#整洁架构" class="headerlink" title="整洁架构"></a>整洁架构</h3><p>有一条贯穿整个架构设计的依赖关系规则：源码中的依赖关系必须只指向同心圆的内层，即由低层机制指向高层策略。<br><img src="/img/16213456573309.jpg" alt="-w539"></p>
 <ul>
 <li>真正的架构很可能会超过四层。并没有某个规则约定一个系统的架构有且只能有四层。</li>
 <li>然而，这其中的依赖关系原则是不变的。码层面的依赖关系一定要指向同心圆的内侧。</li>
@@ -1459,7 +1465,7 @@
 <h4 id="业务实体"><a href="#业务实体" class="headerlink" title="业务实体"></a>业务实体</h4><p>业务实体这一层中封装的是整个系统的关键业务逻辑，一个业务实体既可以是一个带有方法的对象，也可以是一组数据结构和函数的集合。</p>
 <h4 id="用例"><a href="#用例" class="headerlink" title="用例"></a>用例</h4><p>软件的用例层中通常包含的是特定应用场景下的业务逻辑，这里面封装并实现了整个系统的所有用例。<br>这些用例引导了数据在业务实体之间的流入/流出，并指挥着业务实体利用其中的关键业务逻辑来实现用例的设计目标。</p>
 <h4 id="接口适配器"><a href="#接口适配器" class="headerlink" title="接口适配器"></a>接口适配器</h4><p>软件的接口适配器层中通常是一组数据转换器，它们负责将数据从对用例和业务实体而言最方便操作的格式，转化成外部系统（譬如数据库以及Web）最方便操作的格式。</p>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p><img src="http://km.oa.com/files/photos/pictures/202101/1610185410_25_w1456_h934.png" alt="enter image description here"></p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p><img src="/img/16213457042232.jpg" alt="-w545"></p>
 ]]></content>
       <categories>
         <category>系统设计</category>
